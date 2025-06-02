@@ -78,6 +78,6 @@
 
     <a href="index.jsp?action=increment">Increment Counter</a> |
     <a href="index.jsp">Refresh</a>
-
+    <a href="https://eap-app-eap-session.apps-crc.testing">click here for next pod</a>
 </body>
 </html>
