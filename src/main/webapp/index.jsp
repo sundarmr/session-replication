@@ -35,7 +35,7 @@
             // update session
             session.setAttribute("demo.counter", counter);
             session.setAttribute("demo.timestamp", new Date());
-        }else if( action.equals("forward")){
+        }else if( action != null && action.equals("forward")){
             session.setAttribute("demo.counter", counter);
             session.setAttribute("demo.timestamp", new Date());
             response.sendRedirect("https://eap-app-eap-session.apps-crc.testing");
