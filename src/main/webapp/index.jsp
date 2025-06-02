@@ -38,7 +38,7 @@
         }else if( action.equals("forward")){
             session.setAttribute("demo.counter", counter);
             session.setAttribute("demo.timestamp", new Date());
-            response.sendRedirect("https://eap-app-eap-session.apps-crc.testing")
+            response.sendRedirect("https://eap-app-eap-session.apps-crc.testing");
         }
     %>
     <h3>Testing OpenShift Session Replication</h3>
