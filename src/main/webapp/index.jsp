@@ -35,6 +35,10 @@
             // update session
             session.setAttribute("demo.counter", counter);
             session.setAttribute("demo.timestamp", new Date());
+        }else if( action.equals("forward")){
+            session.setAttribute("demo.counter", counter);
+            session.setAttribute("demo.timestamp", new Date());
+            response.sendRedirect("https://eap-app-eap-session.apps-crc.testing")
         }
     %>
     <h3>Testing OpenShift Session Replication</h3>
@@ -78,6 +82,6 @@
 
     <a href="index.jsp?action=increment">Increment Counter</a> |
     <a href="index.jsp">Refresh</a>
-    <a href="https://eap-app-eap-session.apps-crc.testing">click here for next pod</a>
+    <a href="index.jsp?action=forward">click here for next pod</a>
 </body>
 </html>
