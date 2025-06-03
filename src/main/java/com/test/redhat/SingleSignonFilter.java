@@ -16,8 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.log4j.Logger;
-import org.apache.log4j.Priority;
+
 
 
 
@@ -69,7 +68,7 @@ public class SingleSignonFilter implements Filter
     {
         if (isDisabled())
         {
-            logger.log(Priority.DEBUG, "SingleSignonFilter is disabled, bypassing...");
+            
             chain.doFilter(request, response);
             return;
         }
