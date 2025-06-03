@@ -111,14 +111,15 @@ public class SingleSignonFilter implements Filter
             return;
         }
 
+          else {
+        	AuthenticationCookieManager.setAuthCookie("sundar", "/", req, res);
+        }
+
         // When the request is not authenticated, redirect to the login page.
         
-        String uri = "/logon/logon.jsp";
-        if(request.getParameter("loginid") != null){
-        	uri = uri + "?loginid=" + request.getParameter("loginid");
-        }
-        
-        RequestDispatcher dispatcher = config.getServletContext().getContext("/framework").getRequestDispatcher(uri);
+        String uri = "/index.jsp";
+       
+        RequestDispatcher dispatcher = config.getServletContext().getContext("/").getRequestDispatcher(uri);
         
         
         req.setAttribute("originalRequestUri", req.getRequestURI());
