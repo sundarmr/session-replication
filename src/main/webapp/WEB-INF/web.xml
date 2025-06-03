@@ -5,7 +5,7 @@
  <distributable/>
  <filter>
     <filter-name>SingleSignonFilter</filter-name>
-    <filter-class>com.redhat.SingleSignonFilter</filter-class>
+    <filter-class>com.test.redhat.SingleSignonFilter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>SingleSignonFilter</filter-name>
