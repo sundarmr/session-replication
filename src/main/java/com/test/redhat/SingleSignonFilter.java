@@ -32,7 +32,7 @@ public class SingleSignonFilter implements Filter
     public static final String SINGLE_SIGN_ON_DISABLED =
         "com.ast.framework.security.SingleSignon.disable";
 
-    static Logger logger = Logger.getLogger(SingleSignonFilter.class);
+    
     private FilterConfig config = null;
 
 
