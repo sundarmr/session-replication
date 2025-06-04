@@ -83,6 +83,7 @@ public class SingleSignonFilter implements Filter
 
         if (authCookie != null)
         {
+		System.out.println("Auth cookie is not null");
             long cookieCreationTime = AuthenticationCookieManager.getAuthCookieCreationTime(req);
             HttpSession session = req.getSession();
 
