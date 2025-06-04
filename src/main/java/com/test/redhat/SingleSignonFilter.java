@@ -104,11 +104,12 @@ public class SingleSignonFilter implements Filter
          else {
         	 System.out.println("Cookie is not present");
 		boolean islogin = req.getRequestURI().contains("login");
-		 if(!islogin){
+		 System.out.println("Login page request :"+islogin);
+		// if(!islogin){
         	     String uri = "/login.jsp";
                      System.out.println("Config is ..."+config);
                      res.sendRedirect(uri);
-		 }
+		// }
 		 chain.doFilter(request, response);
             return;
         }
