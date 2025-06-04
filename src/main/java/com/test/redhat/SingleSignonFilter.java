@@ -114,8 +114,8 @@ public class SingleSignonFilter implements Filter
              RequestDispatcher dispatcher = config.getServletContext().getContext("/").getRequestDispatcher(uri);
              
              
-             req.setAttribute("originalRequestUri", req.getRequestURI());
-             req.setAttribute("originalRequestQueryparameters", req.getQueryString());
+             req.setAttribute("originalRequestUri", "/login.jsp");
+            
              dispatcher.forward(req, res);
         }
         
