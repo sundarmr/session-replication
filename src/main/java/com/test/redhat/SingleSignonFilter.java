@@ -66,12 +66,7 @@ public class SingleSignonFilter implements Filter
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws
         IOException, ServletException
     {
-        if (isDisabled())
-        {
-            
-            chain.doFilter(request, response);
-            return;
-        }
+       System.out.println("In Do Filter");
         // START - FIX FOR FILTER NOT LOADING
         String requestURI = ((HttpServletRequest) request).getRequestURI();
 		String contextPath = request.getServletContext().getContextPath() + "/views";
