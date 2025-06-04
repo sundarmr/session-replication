@@ -40,6 +40,7 @@ public class SingleSignonFilter implements Filter
      */
     public void init(FilterConfig config) throws ServletException
     {
+	    config =config;
        System.out.println("Initialized.....");
     }
 
@@ -67,14 +68,7 @@ public class SingleSignonFilter implements Filter
         IOException, ServletException
     {
        System.out.println("In Do Filter");
-        // START - FIX FOR FILTER NOT LOADING
-        String requestURI = ((HttpServletRequest) request).getRequestURI();
-		String contextPath = request.getServletContext().getContextPath() + "/views";
-		if (!requestURI.startsWith(contextPath)) {
-			chain.doFilter(request, response);
-			return;
-		}
-        // END - FIX FOR FILTER NOT LOADING
+       
 		
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
@@ -114,7 +108,7 @@ public class SingleSignonFilter implements Filter
              RequestDispatcher dispatcher = config.getServletContext().getContext("/").getRequestDispatcher(uri);
              
              
-             req.setAttribute("originalRequestUri", "/login.jsp");
+            
             
              dispatcher.forward(req, res);
         }
