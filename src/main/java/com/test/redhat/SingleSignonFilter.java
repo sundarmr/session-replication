@@ -105,7 +105,7 @@ public class SingleSignonFilter implements Filter
         	 System.out.println("Cookie is not present");
         	 String uri = "/index.jsp";
              System.out.println("Config is ..."+config);
-             response.sendRedirect(loginURI);
+             response.sendRedirect(uri);
         }
         
     }
