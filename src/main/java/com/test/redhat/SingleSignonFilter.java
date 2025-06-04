@@ -111,20 +111,17 @@ public class SingleSignonFilter implements Filter
             return;
         }
 
-          else {
-        	AuthenticationCookieManager.setAuthCookie("sundar", "/", req, res);
+         else {
+        	 System.out.println("Cookie is not present");
+        	 String uri = "/index.jsp";
+             
+             RequestDispatcher dispatcher = config.getServletContext().getContext("/").getRequestDispatcher(uri);
+             
+             
+             req.setAttribute("originalRequestUri", req.getRequestURI());
+             req.setAttribute("originalRequestQueryparameters", req.getQueryString());
+             dispatcher.forward(req, res);
         }
-
-        // When the request is not authenticated, redirect to the login page.
-        
-        String uri = "/index.jsp";
-       
-        RequestDispatcher dispatcher = config.getServletContext().getContext("/").getRequestDispatcher(uri);
-        
-        
-        req.setAttribute("originalRequestUri", req.getRequestURI());
-        req.setAttribute("originalRequestQueryparameters", req.getQueryString());
-        dispatcher.forward(req, res);
         
     }
 
