@@ -109,6 +109,8 @@ public class SingleSignonFilter implements Filter
                      System.out.println("Config is ..."+config);
                      res.sendRedirect(uri);
 		 }
+		 chain.doFilter(request, response);
+            return;
         }
         
     }
