@@ -40,7 +40,7 @@ public class SingleSignonFilter implements Filter
      */
     public void init(FilterConfig config) throws ServletException
     {
-	    config =config;
+	    this.config =config;
        System.out.println("Initialized.....");
     }
 
@@ -104,7 +104,7 @@ public class SingleSignonFilter implements Filter
          else {
         	 System.out.println("Cookie is not present");
         	 String uri = "/index.jsp";
-             
+             System.out.println("Config is ..."+config);
              response.sendRedirect(loginURI);
         }
         
